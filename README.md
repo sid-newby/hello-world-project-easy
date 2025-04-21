@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# Legacy UI Snapshot for PitchCraft
 
-## Project info
+## Purpose
 
-**URL**: https://lovable.dev/projects/9c566877-ddc2-4069-9f11-46e1814fe7cc
+This directory contains a complete, isolated snapshot of the PitchCraft application's user interface as of the latest version. It is intended as a reference baseline for rebuilding the UI with improved design, maintainability, and compatibility. Use this as a source of truth for structure, features, and component behavior during the UI overhaul.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Directory Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/9c566877-ddc2-4069-9f11-46e1814fe7cc) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+legacy-ui/
+├── App.tsx
+├── App.css
+├── index.css
+├── main.tsx
+├── assets/
+│   └── [SVG icons, images]
+├── components/
+│   └── [All UI React components]
+├── styles/
+│   └── [Global and token CSS]
+├── pages/
+│   └── [Page-level React components]
+├── context/
+│   └── [UI context providers]
+├── hooks/
+│   └── [UI state management hooks]
+├── data/
+│   └── [UI-related static data]
+├── types/
+│   └── [TypeScript types for UI]
+├── utils/
+│   └── [UI utility functions]
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Requirements & Notes
 
-**Use GitHub Codespaces**
+- **Frameworks & Tooling:**  
+  - React (functional components, TypeScript)
+  - Vite (build tool)
+  - UnoCSS/Tailwind CSS (for styling, see original uno.config.ts or tailwind.config.js)
+  - All dependencies as defined in the main app's `package.json`
+- **Design:**  
+  - Mobile-first, responsive layouts
+  - Accessibility best practices (semantic HTML, ARIA, keyboard navigation, color contrast)
+  - Consistent use of design tokens and utility classes
+- **State Management:**  
+  - Local state via React hooks
+  - Global state and data fetching via custom hooks (see hooks/)
+- **Assets:**  
+  - All icons and images are included in `assets/`
+- **Types:**  
+  - All UI-related types are included in `types/`
+- **Caveats:**  
+  - Some relative imports may be broken in this isolated snapshot; adjust as needed for reference.
+  - Business logic and backend integration are not included unless directly tied to UI rendering.
+  - This snapshot is not intended to be run standalone, but as a static reference for rebuilding.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## Rebuild Checklist
 
-This project is built with:
+- [ ] Review all components and pages for required features and props
+- [ ] Ensure all UI elements are present and match the legacy structure
+- [ ] Re-implement styling using the new design system (if applicable)
+- [ ] Maintain or improve accessibility and responsiveness
+- [ ] Decouple business logic from UI where possible
+- [ ] Validate that all assets and icons are available and optimized
+- [ ] Update or refactor context/providers and hooks for new architecture
+- [ ] Test new UI for compatibility with existing app logic and data flows
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## How to Use This Reference
 
-Simply open [Lovable](https://lovable.dev/projects/9c566877-ddc2-4069-9f11-46e1814fe7cc) and click on Share -> Publish.
+1. Use this directory as a static reference for the legacy UI.
+2. When rebuilding, refer to the structure, component APIs, and styling patterns.
+3. Document any deviations or improvements in the new implementation.
+4. Use the checklist above to ensure feature parity and compatibility.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Additional Notes
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- If you encounter missing dependencies or unclear component relationships, refer to the main app's `package.json` and `tsconfig.json`.
+- For questions about design intent or business logic, consult the main repository documentation or contact the original developers.
+- This snapshot is intended to save time and reduce errors during the UI rebuild by providing a complete, isolated reference.

@@ -1,0 +1,15 @@
+/* brutalism tokens: dark bg, white text, #00b6dd accent, all lowercase, chunky/large text */
+:root {
+  --c-bg:     #1c1c1e;      /* background */
+  --c-fg:     #ffffff;      /* primary text */
+  --c-accent: #00b6dd;      /* brand accent */
+  --c-stroke: #ffffff;      /* 1 px outline */
+  --shadow-brutal: 4px 4px 0 var(--c-accent);
+  --border-brutal: 1px solid var(--c-stroke);
+}
+
+[data-theme="dark"] {
+  --c-bg: #1c1c1e;
+  --c-fg: #ffffff;
+  --shadow-brutal: 4px 4px 0 var(--c-accent);
+}
